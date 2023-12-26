@@ -75,25 +75,12 @@ function partition(arr, callback) {
   return arr.reduce(
     function (accum, next) {
       if (callback(next)) {
-        accum[0].push(next);
+        //if cb is true for nextValue,
+        accum[0].push(next); //push to array in index 0
       } else {
-        accum[1].push(next);
+        accum[1].push(next); // otherwise, push to array in index 1
       }
       return accum;
-    },
-    [[], []]
-  );
-}
-
-function partition(arr, cb) {
-  return arr.reduce(
-    function (acc, next) {
-      if (cb(next)) {
-        acc[0].push(next);
-      } else {
-        acc[1].push(next);
-      }
-      return acc;
     },
     [[], []]
   );
