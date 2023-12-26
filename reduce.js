@@ -7,8 +7,8 @@ Examples:
 */
 
 function extractValue(arr, key) {
-  return arr.reduce(function (acc, next) {
-    acc.push(next[key]);
+  return arr.reduce(function (acc, nextValue) {
+    acc.push(nextValue[key]);
     return acc;
   }, []); //no need to initialize new empty array, simply use second parameter of reduce for []
 }
@@ -24,7 +24,20 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 
-function vowelCount(str) {}
+function vowelCount(str) {
+    let newObj = {};
+  const vowels = "aeiou"; //copied over previous vowel counting code
+  strArr = str.split("");
+  strArr.reduce(function (acc, nextValue) {
+    let lowerCaseAcc = acc.toLowerCase();
+    if (vowels.indexOf(lowerCaseAcc) !== -1) {
+        if (vowelsCountObj[lowerCaseAcc]) {
+          vowelsCountObj[lowerCaseAcc]++;
+        } else {
+          vowelsCountObj[lowerCaseAcc] = 1;
+        }
+  }, newObj); //using second parameter of reduce to create an empty object
+}
 
 /*
 Write a function called addKeyAndValue which accepts an array of objects and returns the array of objects passed to it with each object now including the key and value passed to the function.
