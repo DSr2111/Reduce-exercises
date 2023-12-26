@@ -7,12 +7,10 @@ Examples:
 */
 
 function extractValue(arr, key) {
-  let newArr = [];
-  arr.reduce(function (obj) {
-    obj[key];
-    newArr.push(obj[key]);
-  });
-  return newArr;
+  return arr.reduce(function (acc, next) {
+    acc.push(next[key]);
+    return acc;
+  }, []); //no need to initialize new empty array, simply use second parameter of reduce for []
 }
 
 /*
