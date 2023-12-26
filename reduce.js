@@ -72,8 +72,13 @@ Examples:
 */
 
 function partition(arr, callback) {
-  arr.reduce(function (accum, next) {
-    let trueArray = [];
-    let falseArray = [];
-  });
+  return arr.reduce(
+    function (accum, next) {
+      if (callback) {
+      } else {
+      }
+    },
+    [],
+    []
+  );
 }
