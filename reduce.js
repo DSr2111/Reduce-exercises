@@ -25,19 +25,19 @@ Examples:
 */
 
 function vowelCount(str) {
-  let vowelsCountObj = {};
   const vowels = "aeiou"; //copied over previous vowel counting code
   strArr = str.split("");
-  strArr.reduce(function (acc, nextValue) {
-    let lowerCaseAcc = acc.toLowerCase();
-    if (vowels.indexOf(lowerCaseAcc) !== -1) {
-      if (vowelsCountObj[lowerCaseAcc]) {
-        vowelsCountObj[lowerCaseAcc]++;
+  return strArr.reduce(function (acc, nextValue) {
+    let lowerCase = nextValue.toLowerCase();
+    if (vowels.indexOf(lowerCase) !== -1) {
+      if (acc[lowerCase]) {
+        acc[lowerCase]++;
       } else {
-        vowelsCountObj[lowerCaseAcc] = 1;
+        acc[lowerCase] = 1;
       }
     }
-  }, vowelsCountObj); //using second parameter of reduce to create an empty object
+    return acc;
+  }, {}); //using second parameter of reduce to create an empty object
 }
 
 /*
