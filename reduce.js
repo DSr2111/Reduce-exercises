@@ -38,10 +38,10 @@ Examples:
 */
 
 function addKeyAndValue(arr, key, value) {
-  arr.reduce(function (acc, nextValue) {
-    acc[key] = value;
-  }, []);
-  return arr;
+  return arr.reduce(function (acc, next, idx) {
+    acc[idx][key] = value;
+    return acc;
+  }, arr);
 }
 
 /*
