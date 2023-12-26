@@ -74,11 +74,27 @@ Examples:
 function partition(arr, callback) {
   return arr.reduce(
     function (accum, next) {
-      if (callback) {
+      if (callback(next)) {
+        accum[0].push(next);
       } else {
+        accum[1].push(next);
       }
+      return accum;
     },
-    [],
-    []
+    [[], []]
+  );
+}
+
+function partition(arr, cb) {
+  return arr.reduce(
+    function (acc, next) {
+      if (cb(next)) {
+        acc[0].push(next);
+      } else {
+        acc[1].push(next);
+      }
+      return acc;
+    },
+    [[], []]
   );
 }
