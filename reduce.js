@@ -39,13 +39,18 @@ Examples:
 
 function addKeyAndValue(arr, key, value) {
   return arr.reduce(function (acc, next, idx) {
-    acc[idx][key] = value;
+    //next not declared, so it is assigned to first item in array
+    acc[idx][key] = value; //updating the accumulator array by adding the key and value to the item at the specified index
     return acc;
   }, arr);
 }
 
 /*
-Write a function called partition which accepts an array and a callback and returns an array with two arrays inside of it. The partition function should run the callback function on each value in the array and if the result of the callback function at that specific value is true, the value should be placed in the first subarray. If the result of the callback function at that specific value is false, the value should be placed in the second subarray. 
+Write a function called partition which accepts an array and a callback and returns an array with
+ two arrays inside of it. The partition function should run the callback function on each 
+ value in the array and if the result of the callback function at that specific value is true, 
+ the value should be placed in the first subarray. If the result of the callback function at 
+ that specific value is false, the value should be placed in the second subarray. 
 
 Examples:
     
@@ -66,4 +71,9 @@ Examples:
     partition(names, isLongerThanThreeCharacters) // [['Elie', 'Colt', 'Matt'], ['Tim']]
 */
 
-function partition(arr, callback) {}
+function partition(arr, callback) {
+  arr.reduce(function (accum, next) {
+    let trueArray = [];
+    let falseArray = [];
+  });
+}
